@@ -1,0 +1,157 @@
+/* #change {
+    position: absolute;
+    left: 1080px;
+} */
+*{
+ font-family: "raleway";
+}
+
+
+a {
+    cursor: pointer;
+    transition: 0.8s;
+    overflow: hidden;
+}
+
+a:hover {
+    color: black;
+    border: 1px solid cornsilk;
+    border-radius: 10px;
+    background: cornsilk;
+}
+
+#Services {
+    font-family: "raleway-italic";
+}
+
+.image1 img {
+    object-fit: fill;
+    object-position: center;
+    height: 300px;
+    width: 100%;
+    position: absolute;
+}
+
+
+* {
+    overflow-x: hidden;
+}
+
+
+.content {
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: 0.6s;
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.content #addAccount {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 500px;
+    margin-top: 250px;
+}
+
+.content:hover {
+    opacity: 1;
+}
+
+#addAccount {
+    min-width: 300px;
+    min-height: 60px;
+    display: inline-flex;
+    font-family: "raleway";
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: whitesmoke;
+    background: transparent;
+    border: none;
+    border-radius: 1000px;
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#addAccount::before {
+    content: '';
+    border-radius: 1000px;
+    min-width: calc(300px + 12px);
+    min-height: calc(60px + 12px);
+    border: 6px solid #1e2524;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+    overflow: hidden;
+}
+
+#addAccount:hover,
+#addAccount:focus {
+    color: whitesmoke;
+    transform: translateY(-6px);
+    overflow: hidden;
+}
+
+#addAccount:hover::before,
+#addAccount:focus::before {
+    opacity: 1;
+    overflow: hidden;
+}
+
+#addAccount::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid #141a18;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+    overflow: hidden;
+}
+
+#addAccount:hover::after,
+#addAccount:focus::after {
+    animation: none;
+    display: none;
+    overflow: hidden;
+}
+
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

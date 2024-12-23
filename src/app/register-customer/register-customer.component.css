@@ -1,0 +1,13 @@
+.container-fluid a{
+   margin: 0 auto;
+   font-family: "raleway";
+   font-size: 30px;
+}
+*{
+    font-family: "raleway";
+}
+
+h6 a:hover{
+    color: indigo;
+    font-size: 20px;
+}

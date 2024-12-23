@@ -1,0 +1,15 @@
+
+@font-face {
+    font-family: "neueBlack";
+    src: url('./assets/fonts/TheNeue-Black.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "raleway-italic";
+    src: url('./assets/fonts/Raleway-Italic-VF.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "raleway";
+    src: url('./assets/fonts/Raleway-VF.ttf') format('truetype');
+}

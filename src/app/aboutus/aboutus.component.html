@@ -1,0 +1,138 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark fixed-top" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['/customer-homepage']" >WalletPayment</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav  gap-5">
+                <li class="nav-item">
+                    <a class="nav-link " [routerLink]="['/customer-homepage']">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " [routerLink]="['/aboutus']">AboutUs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/add-account']">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/contactus']">ContactUs</a>
+                </li>
+
+                <div class="collapse navbar-collapse" id="change" *ngIf="isLoggednIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="50"
+                        height="30"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M399 384.2C376.9 345.8 335.4 320 288 320l-64 0c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z" />
+                    </svg>
+                    <ul class="navbar-nav  gap-5">
+                        <li class="nav-item">
+                            <a class="nav-link">{{customer_name}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a [routerLink]="['/login-customer']" (click)="logout()" class="nav-link">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<br><br>
+<div class="container">
+    <br>
+    <h1>About Us</h1>
+    <p>
+
+        Welcome to WalletPayment, your trusted partner in secure, seamless, and innovative financial transactions.
+        Founded
+        with a vision to empower individuals and businesses with efficient digital payment solutions, WalletPayment has
+        grown into a leader in the financial technology sector, offering state-of-the-art services tailored to meet
+        diverse
+        user needs.
+        <br>
+        At WalletPayment, we believe that money should move as swiftly as your aspirations. Our platform enables users
+        to
+        send, receive, and manage money effortlessly, ensuring convenience and security at every step. Whether you’re
+        transferring funds to loved ones, paying for goods and services, or managing your finances, WalletPayment
+        provides a
+        reliable and intuitive experience.
+
+        Our journey began with a simple idea: to make financial transactions more accessible and user-friendly for
+        everyone.
+        Today, we serve millions of users across various demographics, from tech-savvy millennials to seasoned
+        entrepreneurs. WalletPayment bridges the gap between traditional banking and the evolving demands of the digital
+        economy, offering a robust ecosystem that caters to your financial needs.
+        <br>
+        We pride ourselves on our commitment to innovation. Our team of passionate developers, designers, and financial
+        experts continuously work to refine our platform, introducing cutting-edge features that enhance user
+        experience.
+        With WalletPayment, you can expect nothing less than the best in fintech solutions.
+
+        Security is at the core of our operations. We leverage advanced encryption technologies and stringent security
+        protocols to protect your data and transactions. At WalletPayment, your trust matters to us, and we leave no
+        stone
+        unturned to ensure that your financial information remains private and secure.
+
+        Our customer-centric approach sets us apart. We understand that every user is unique, and so are their financial
+        needs. From personalized payment options to dedicated customer support, WalletPayment goes the extra mile to
+        ensure
+        satisfaction. Our 24/7 customer support team is always available to assist you with any queries or concerns.
+        <br>
+        In addition to individual users, WalletPayment empowers businesses with tailored solutions. From small startups
+        to
+        established enterprises, our business tools help organizations streamline payment processes, manage transactions
+        efficiently, and drive growth. We’re not just a payment platform; we’re a partner in your success.
+
+        We are proud of our role in promoting financial inclusion. By making digital payment solutions accessible to
+        underserved communities, WalletPayment contributes to bridging the economic divide. Our mission is to ensure
+        that
+        everyone, regardless of their background, has the tools to participate in the digital economy.
+        <br>
+        Sustainability and social responsibility are integral to our vision. WalletPayment is committed to minimizing
+        its
+        environmental footprint by leveraging digital-first solutions that reduce paper-based transactions.
+        Additionally, we
+        actively support initiatives that foster education, community development, and financial literacy.
+
+        Looking ahead, WalletPayment remains dedicated to redefining the future of payments. As technology evolves, so
+        will
+        our services, ensuring that we continue to meet and exceed your expectations. Our roadmap includes integrating
+        AI-driven financial insights, blockchain for enhanced transparency, and partnerships that bring even more value
+        to
+        our users.
+        <br>
+        Thank you for choosing WalletPayment. Together, we’re shaping a world where financial transactions are not just
+        simple but also empowering. Whether you’re an individual looking for a smarter way to manage your money or a
+        business seeking to optimize payment processes, WalletPayment is here to make your financial journey seamless,
+        secure, and successful.
+    </p><br>
+    <button style="margin-left: 500px;"  [routerLink]="['/customer-homepage']">HomePage</button>
+</div>
+<br>
+<footer style="color: #fff; padding: 20px 0; text-align: center; font-size: 14px;" class="bg-dark">
+  <div class="sideContainer" style="position: absolute; font-family:'neueBlack'; font-size: 25px; margin-top: 20px;">
+    <a class="navbar-brand" [routerLink]="['/customer-homepage']">WalletPayment</a>
+  </div>
+  
+  <div style="margin-bottom: 10px;">
+      <a href="mailto:support@walletpayment.com" style="color: #fff; margin: 0 10px; text-decoration: none;">support&#64;walletpayment.com</a>
+      |
+      <a href="tel:+18005551234" style="color: #fff; margin: 0 10px; text-decoration: none;">+1-800-555-1234</a>
+  </div>
+  <div style="margin-bottom: 10px;">
+      Follow us on:
+      <a href="https://facebook.com/walletpayment" style="color: #fff; margin: 0 5px; text-decoration: none;">Facebook</a>
+      |
+      <a href="https://twitter.com/walletpayment" style="color: #fff; margin: 0 5px; text-decoration: none;">Twitter</a>
+      |
+      <a href="https://linkedin.com/company/walletpayment" style="color: #fff; margin: 0 5px; text-decoration: none;">LinkedIn</a>
+      |
+      <a href="https://instagram.com/walletpayment" style="color: #fff; margin: 0 5px; text-decoration: none;">Instagram</a>
+  </div>
+  <div style="margin-top: 10px;">
+      &copy; 2024 WalletPayment. All rights reserved.
+  </div>
+</footer>

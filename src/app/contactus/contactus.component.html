@@ -1,0 +1,147 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark fixed-top" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="['/customer-homepage']" >WalletPayment</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav  gap-5">
+                <li class="nav-item">
+                    <a class="nav-link " [routerLink]="['/customer-homepage']">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " [routerLink]="['/aboutus']">AboutUs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/add-account']">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/contactus']">ContactUs</a>
+                </li>
+
+                <div class="collapse navbar-collapse" id="change" *ngIf="isLoggednIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="50"
+                        height="30"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M399 384.2C376.9 345.8 335.4 320 288 320l-64 0c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z" />
+                    </svg>
+                    <ul class="navbar-nav  gap-5">
+                        <li class="nav-item">
+                            <a class="nav-link">{{customer_name}}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a [routerLink]="['/login-customer']" (click)="logout()" class="nav-link">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+<div class="container">
+    <h1>Contact Us</h1>
+    <p>At WalletPayment, we value open communication and are always eager to hear from you. Whether you have a question,
+        feedback, or need assistance, our team is here to help. Feel free to reach out to us through any of the channels
+        listed below, and we’ll ensure your queries are addressed promptly.</p>
+
+    <h2>Customer Support</h2>
+    <p>Our dedicated customer support team is available 24/7 to assist you with any issues or concerns. Whether you need
+        help with transactions, account management, or technical support, we’re just a call or message away.</p>
+    <ul>
+        <li><strong>Email:</strong> <a href="mailto:support@walletpayment.com">support&#64;walletpayment.com</a></li>
+        <li><strong>Phone:</strong> +1-800-555-1234</li>
+        <li><strong>Live Chat:</strong> Available on our website and mobile app</li>
+    </ul>
+
+    <h2>Business Inquiries</h2>
+    <p>For partnerships, collaborations, or business-related queries, please get in touch with our business development
+        team. We’re always excited to explore opportunities to grow together.</p>
+    <ul>
+        <li><strong>Email:</strong> <a href="mailto:business@walletpayment.com">business&#64;walletpayment.com</a></li>
+        <li><strong>Phone:</strong> +1-800-555-5678</li>
+    </ul>
+
+    <h2>Media and Press</h2>
+    <p>Are you a journalist or member of the media looking for information about WalletPayment? We’d love to connect and
+        provide you with the latest updates, press releases, and media kits.</p>
+    <ul>
+        <li><strong>Email:</strong> <a href="mailto:media@walletpayment.com">media&#64;walletpayment.com</a></li>
+        <li><strong>Phone:</strong> +1-800-555-9876</li>
+    </ul>
+
+    <h2>Headquarters</h2>
+    <p>We welcome in-person visits to our headquarters during business hours. Please schedule an appointment with our
+        reception team to ensure we can serve you better.</p>
+    <ul>
+        <li><strong>Address:</strong> WalletPayment HQ, 123 Fintech Avenue, Innovation City, CA 90001, USA</li>
+        <li><strong>Phone:</strong> +1-800-555-0000</li>
+    </ul>
+
+    <h2>Feedback and Suggestions</h2>
+    <p>Your feedback helps us grow and improve. If you have suggestions for new features, enhancements, or general
+        comments, we’d love to hear from you.</p>
+    <ul>
+        <li><strong>Feedback Form:</strong> Available on our website’s contact page</li>
+    </ul>
+
+    <h2>Social Media</h2>
+    <p>Stay connected with WalletPayment and get the latest updates, tips, and offers by following us on social media:
+    </p>
+    <ul>
+        <li><strong>Facebook:</strong> <a href="https://facebook.com/walletpayment">facebook.com/walletpayment</a></li>
+        <li><strong>Twitter:</strong> <a href="https://twitter.com/walletpayment">twitter.com/walletpayment</a></li>
+        <li><strong>LinkedIn:</strong> <a
+                href="https://linkedin.com/company/walletpayment">linkedin.com/company/walletpayment</a></li>
+        <li><strong>Instagram:</strong> <a href="https://instagram.com/walletpayment">instagram.com/walletpayment</a>
+        </li>
+    </ul>
+
+    <h2>Frequently Asked Questions (FAQs)</h2>
+    <p>For quick answers to common questions, visit our FAQ section on our website. It’s a comprehensive resource
+        designed to help you troubleshoot and understand our services better.</p>
+    <ul>
+        <li><strong>Website:</strong> <a href="https://www.walletpayment.com/faq">www.walletpayment.com/faq</a></li>
+    </ul>
+
+    <h2>Emergency Support</h2>
+    <p>In case of urgent issues such as unauthorized transactions or account security concerns, contact us immediately:
+    </p>
+    <ul>
+        <li><strong>Emergency Line:</strong> +1-800-555-URGENT</li>
+        <li><strong>Email:</strong> <a href="mailto:emergency@walletpayment.com">emergency&#64;walletpayment.com</a>
+        </li>
+    </ul>
+
+    <p>Thank you for choosing WalletPayment. Your satisfaction and trust are our top priorities, and we’re committed to
+        providing you with the best possible service experience. Reach out to us anytime—we’re here to help!</p>
+</div><br>
+<button style="margin-left: 600px;" [routerLink]="['/customer-homepage']">HomePage</button>
+<br>
+<br>
+<footer style="color: #fff; padding: 20px 0; text-align: center; font-size: 14px;" class="bg-dark">
+  <div class="sideContainer" style="position: absolute; font-family:'neueBlack'; font-size: 25px; margin-top: 20px;">
+    <a class="navbar-brand" [routerLink]="['/customer-homepage']">WalletPayment</a>
+  </div>
+  
+  <div style="margin-bottom: 10px;">
+      <a href="mailto:support@walletpayment.com" style="color: #fff; margin: 0 10px; text-decoration: none;">support&#64;walletpayment.com</a>
+      |
+      <a href="tel:+18005551234" style="color: #fff; margin: 0 10px; text-decoration: none;">+1-800-555-1234</a>
+  </div>
+  <div style="margin-bottom: 10px;">
+      Follow us on:
+      <a href="https://facebook.com/walletpayment" style="color: #fff; margin: 0 5px; text-decoration: none;">Facebook</a>
+      |
+      <a href="https://twitter.com/walletpayment" style="color: #fff; margin: 0 5px; text-decoration: none;">Twitter</a>
+      |
+      <a href="https://linkedin.com/company/walletpayment" style="color: #fff; margin: 0 5px; text-decoration: none;">LinkedIn</a>
+      |
+      <a href="https://instagram.com/walletpayment" style="color: #fff; margin: 0 5px; text-decoration: none;">Instagram</a>
+  </div>
+  <div style="margin-top: 10px;">
+      &copy; 2024 WalletPayment. All rights reserved.
+  </div>
+</footer>

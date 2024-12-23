@@ -1,0 +1,130 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark fixed-top" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/customer-homepage']">WalletPayment</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav  gap-5">
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/customer-homepage']">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " [routerLink]="['/aboutus']">AboutUs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/add-account']">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contactus']">ContactUs</a>
+        </li>
+
+        <div class="collapse navbar-collapse" id="change" *ngIf="!isLoggednIn">
+          <ul class="navbar-nav  gap-5">
+            <li class="nav-item">
+              <a class="nav-link " [routerLink]="['/login-customer']">Login</a>
+            </li>
+            </ul>
+        </div>
+
+        <div class="collapse navbar-collapse" id="change" *ngIf="isLoggednIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="50"
+            height="30"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M399 384.2C376.9 345.8 335.4 320 288 320l-64 0c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z" />
+          </svg>
+          <ul class="navbar-nav  gap-5">
+            <li class="nav-item">
+              <a class="nav-link">{{customer_name}}</a>
+            </li>
+            <li class="nav-item">
+              <a [routerLink]="['/login-customer']" (click)="logout()" class="nav-link">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br><br>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="1000">
+      <img
+        src="https://media.gettyimages.com/id/1371070653/photo/over-the-shoulder-view-of-young-asian-woman-shopping-online-for-flight-tickets-on-airline.jpg?s=612x612&w=0&k=20&c=NUUCjW1xpJ_zkLkPVxlase3R96q2UcVe-epuISw2eTs="
+        class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://cdn.pixabay.com/photo/2024/02/26/19/19/car-8598762_640.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://cdn.pixabay.com/photo/2021/07/12/10/55/bank-6406011_640.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="../../assets/images/addbank.png" class="d-block w-100" alt="Bank">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div>
+  <h1 class="text-center" id="Services">Our Services</h1>
+</div>
+<div class="wrapper">
+  <div class="image1">
+    <img src="../../assets/images/addbank.png" alt="bank">
+    <div class="content">
+      <button id="addAccount" [routerLink]="['/add-account']">Add Account</button>
+    </div>
+  </div>
+</div>
+<br>
+<div class="options">
+  <div class="wallet">
+    <button>Wallet</button>
+  </div>
+  <br>
+  <div class="BillPayment">
+    <button>Bill Payments</button>
+  </div>
+  <br>
+  <div class="Transactions">
+    <button>Transactions</button>
+  </div>
+  <br>
+  <div class="Beneficiary">
+    <button>Beneficiary</button>
+  </div>
+</div>
+<br>
+<footer style="color: #fff; padding: 20px 0; text-align: center; font-size: 14px;" class="bg-dark">
+  <div class="sideContainer" style="position: absolute; font-family:'raleway'; font-size: 25px; margin-top: 20px;">
+    <a class="navbar-brand" [routerLink]="['/customer-homepage']">WalletPayment</a>
+  </div>
+  
+  <div style="margin-bottom: 10px;">
+      <a href="mailto:support@walletpayment.com" style="color: #fff; margin: 0 10px; text-decoration: none;">support&#64;walletpayment.com</a>
+      |
+      <a href="tel:+18005551234" style="color: #fff; margin: 0 10px; text-decoration: none;">+1-800-555-1234</a>
+  </div>
+  <div style="margin-bottom: 10px;">
+      Follow us on:
+      <a href="https://facebook.com/walletpayment" style="color: #fff; margin: 0 5px; text-decoration: none;">Facebook</a>
+      |
+      <a href="https://twitter.com/walletpayment" style="color: #fff; margin: 0 5px; text-decoration: none;">Twitter</a>
+      |
+      <a href="https://linkedin.com/company/walletpayment" style="color: #fff; margin: 0 5px; text-decoration: none;">LinkedIn</a>
+      |
+      <a href="https://instagram.com/walletpayment" style="color: #fff; margin: 0 5px; text-decoration: none;">Instagram</a>
+  </div>
+  <div style="margin-top: 10px;">
+      &copy; 2024 WalletPayment. All rights reserved.
+  </div>
+</footer>
