@@ -5,9 +5,10 @@ import { Router, RouterModule } from '@angular/router';
 import { Bankaccount } from '../bankaccount';
 import { CustomerService } from '../services/customer.service';
 
+
 @Component({
   selector: 'app-delete-account',
-  imports: [CommonModule,RouterModule,FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   templateUrl: './delete-account.component.html',
   styleUrl: './delete-account.component.css'
 })
@@ -22,6 +23,9 @@ export class DeleteAccountComponent {
     wallet_id: string | null = null;
   
   
+    authService = inject(CustomerService);
+    isLoggednIn: boolean = this.authService.isLoggedIn();
+
     ngOnInit() {
       if (isPlatformBrowser(this.platformId)) {
         this.customer_name = localStorage.getItem('user_name');
@@ -33,8 +37,7 @@ export class DeleteAccountComponent {
       }
     }
   
-    authService = inject(CustomerService);
-    isLoggednIn: boolean = this.authService.isLoggedIn();
+   
   
     // onSubmit(deleteaccountform) {
     //   this.deleteAccountByNo(deleteaccountform);
@@ -53,5 +56,6 @@ export class DeleteAccountComponent {
 
     logout() {
       localStorage.clear();
+      this.authService.isLoggedIn$.next(false);
     }
 }

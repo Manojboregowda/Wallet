@@ -29,5 +29,6 @@ export class ContactusComponent {
     
       logout(){
         localStorage.clear();
+        this.authService.isLoggedIn$.next(false);
       }
 }

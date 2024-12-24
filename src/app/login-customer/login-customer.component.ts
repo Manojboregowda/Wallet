@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormsModule} from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { Customer } from '../customer';
 import { CustomerService } from '../services/customer.service';
 import { Wallet } from '../wallet';
+
 
 @Component({
   selector: 'app-login-customer',
@@ -21,8 +22,14 @@ export class LoginCustomerComponent {
 
   constructor(private loginService: CustomerService, private router: Router) { }
 
-  ngOnInit(): void {
 
+  authService = inject(CustomerService);
+    isLoggednIn:boolean = this.authService.isLoggedIn();
+
+  ngOnInit(): void {
+    this.authService.isLoggedIn$.subscribe(res=>{
+      this.isLoggednIn= this.authService.isLoggedIn();
+    })
   }
 
   loginCustomer() {
@@ -35,6 +42,8 @@ export class LoginCustomerComponent {
       console.log(data);
 
       alert('Login is Success!');
+      this.loginService.isLoggedIn$.next(true)
+      
       this.customer_id = data.customerId.toString();
       this.customer_name = data.customerName;
       this.wallet = data.walletDto;

@@ -69,5 +69,6 @@ export class AddBankComponent {
 
   logout() {
     localStorage.clear();
+    this.authService.isLoggedIn$.next(false);
   }
 }

@@ -65,5 +65,6 @@ export class UpdateBankComponent {
 
   logout() {
     localStorage.clear();
+    this.authService.isLoggedIn$.next(false);
   }
 }

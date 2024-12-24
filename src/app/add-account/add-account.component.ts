@@ -31,5 +31,6 @@ export class AddAccountComponent {
 
   logout() {
     localStorage.clear();
+    this.authService.isLoggedIn$.next(false);
   }
 }

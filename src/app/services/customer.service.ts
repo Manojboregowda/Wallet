@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Customer } from '../customer';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { isPlatformBrowser } from '@angular/common';
 import { Bankaccount } from '../bankaccount';
 
@@ -12,6 +12,8 @@ export class CustomerService {
 
   private baseURL = "http://localhost:8080/";
   constructor(private http: HttpClient, @Inject(PLATFORM_ID) private platformId: Object) { }
+
+  isLoggedIn$ = new BehaviorSubject<boolean>(false);
 
   getCustomerList(): Observable<Customer[]> {
     return this.http.get<Customer[]>(`${this.baseURL}` + 'customer/allcustomer');

@@ -64,5 +64,6 @@ export class ViewAccountsComponent {
 
   logout() {
     localStorage.clear();
+    this.authService.isLoggedIn$.next(false);
   }
 }

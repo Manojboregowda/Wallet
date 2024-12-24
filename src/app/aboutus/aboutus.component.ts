@@ -3,6 +3,7 @@ import { Component, inject, Inject, PLATFORM_ID } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CustomerService } from '../services/customer.service';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from "../header/header.component";
 
 @Component({
   selector: 'app-aboutus',
@@ -30,5 +31,6 @@ export class AboutusComponent {
 
   logout() {
     localStorage.clear();
+    this.authService.isLoggedIn$.next(false);
   }
 }
